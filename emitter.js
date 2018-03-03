@@ -3,11 +3,13 @@ function eventFunc(){
 }
 
 eventFunc.prototype.on = function(type , listener){
-    this.event[type] = event[type] || []
+    console.log(type)
+    this.event[type] = this.event[type] || []
     this.event[type].push(listener)
 }
 
 eventFunc.prototype.emit = function(type){
+    console.log(this.emit[type])
     if(this.emit[type]){
         this.event[type].forEach(element => {
             element()
